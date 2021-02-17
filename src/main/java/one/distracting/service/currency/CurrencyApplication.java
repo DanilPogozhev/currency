@@ -1,4 +1,4 @@
-package one.distracting.service.currency.currency;
+package one.distracting.service.currency;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

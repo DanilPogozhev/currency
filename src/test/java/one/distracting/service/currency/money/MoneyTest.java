@@ -1,9 +1,9 @@
-package one.distracting.service.currency.currency.money;
+package one.distracting.service.currency.money;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import one.distracting.service.currency.currency.Dollar;
+import one.distracting.service.currency.Dollar;
 
 public class MoneyTest {
 

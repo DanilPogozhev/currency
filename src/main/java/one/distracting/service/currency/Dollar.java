@@ -1,4 +1,4 @@
-package one.distracting.service.currency.currency;
+package one.distracting.service.currency;
 
 public class Dollar {
     public int amount;
@@ -9,6 +9,12 @@ public class Dollar {
 
     public Dollar times(int multiplier) {
         return new Dollar(amount * multiplier);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
     }
 
 }

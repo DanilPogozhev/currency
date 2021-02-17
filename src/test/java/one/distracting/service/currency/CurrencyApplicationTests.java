@@ -1,4 +1,4 @@
-package one.distracting.service.currency.currency;
+package one.distracting.service.currency;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
