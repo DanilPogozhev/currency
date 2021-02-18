@@ -1,11 +1,8 @@
-package one.distracting.service.currency.money;
+package one.distracting.service.currency.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-
-import one.distracting.service.currency.Dollar;
-import one.distracting.service.currency.Franc;
 
 public class MoneyTest {
 

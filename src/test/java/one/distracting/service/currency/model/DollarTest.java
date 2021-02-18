@@ -1,4 +1,4 @@
-package one.distracting.service.currency;
+package one.distracting.service.currency.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
