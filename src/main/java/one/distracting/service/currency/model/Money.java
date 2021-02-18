@@ -1,6 +1,6 @@
 package one.distracting.service.currency.model;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -18,7 +18,9 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     public String getCurrency() {
         return currency;
@@ -27,7 +29,12 @@ public abstract class Money {
     @Override
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && getClass().equals(money.getClass());
+        return amount == money.amount && getCurrency().equals(money.getCurrency());
+    }
+
+    @Override
+    public String toString() {
+        return amount + " " + currency;
     }
 
 }
