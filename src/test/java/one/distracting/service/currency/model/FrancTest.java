@@ -9,8 +9,8 @@ public class FrancTest {
     
     @Test
     public void testEquality() {
-        assertEquals(new Franc(5), new Franc(5));
-        assertNotEquals(new Franc(5), new Franc(6));
+        assertEquals(Money.franc(5), Money.franc(5));
+        assertNotEquals(Money.franc(5), Money.franc(6));
     }
 
 }

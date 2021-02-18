@@ -9,8 +9,8 @@ public class DollarTest {
 
     @Test
     public void testEquality() {
-        assertEquals(new Dollar(5), new Dollar(5));
-        assertNotEquals(new Dollar(5), new Dollar(6));
+        assertEquals(Money.dollar(5), Money.dollar(5));
+        assertNotEquals(Money.dollar(5), Money.dollar(6));
     }
 
 }
