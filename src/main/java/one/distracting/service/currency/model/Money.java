@@ -1,13 +1,21 @@
 package one.distracting.service.currency.model;
 
-public class Money {
+public class Money implements Expression {
 
-    protected int amount;
+    private int amount;
     protected String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public String getCurrency() {
+        return currency;
     }
 
     static Money dollar(int amount) {
@@ -22,8 +30,12 @@ public class Money {
         return new Money(amount * multiplier, currency);
     }
 
-    public String getCurrency() {
-        return currency;
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 
     @Override
