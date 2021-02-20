@@ -42,19 +42,4 @@ public class MoneyTest {
         assertEquals(five, sum.getAugend());
         assertEquals(five, sum.getAddend());
     }
-
-    @Test
-    public void testReduceSum() {
-        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
-        Bank bank = new Bank();
-        Money reduce = bank.reduce(sum, "USD");
-        assertEquals(Money.dollar(7), reduce);
-    }
-
-    @Test
-    public void testReduceMoney() {
-        Bank bank = new Bank();
-        Money reduce = bank.reduce(Money.dollar(5), "USD");
-        assertEquals(Money.dollar(5), reduce);
-    }
 }
