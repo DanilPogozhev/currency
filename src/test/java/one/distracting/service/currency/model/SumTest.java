@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SumTest {
 
     @Test
-    public void testPlusSimilarCurrencies() {
+    public void testPlusDifferentCurrencies() {
         Expression tenFrancs = Money.franc(10);
         Expression fiveDollars = Money.dollar(5);
 
@@ -17,6 +17,19 @@ public class SumTest {
         Money result = bank.reduce(sum, "USD");
 
         assertEquals(Money.dollar(15), result);
+    }
+
+    @Test
+    public void testTimesWithDifferentCurrencies() {
+        Expression tenFrancs = Money.franc(10);
+        Expression fiveDollars = Money.dollar(5);
+
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(tenFrancs, fiveDollars).times(2);
+        Money result = bank.reduce(sum, "USD");
+
+        assertEquals(Money.dollar(20), result);
     }
 
 }
