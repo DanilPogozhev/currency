@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SumTest {
+class SumTest {
 
     @Test
-    public void testPlusDifferentCurrencies() {
+    void testPlusDifferentCurrencies() {
         Expression tenFrancs = Money.franc(10);
         Expression fiveDollars = Money.dollar(5);
 
@@ -20,7 +20,7 @@ public class SumTest {
     }
 
     @Test
-    public void testTimesWithDifferentCurrencies() {
+    void testTimesWithDifferentCurrencies() {
         Expression tenFrancs = Money.franc(10);
         Expression fiveDollars = Money.dollar(5);
 

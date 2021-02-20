@@ -2,10 +2,11 @@ package one.distracting.service.currency.model;
 
 import one.distracting.service.currency.model.utility.RatePair;
 
-import java.util.Hashtable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Bank {
-    private static Hashtable<RatePair, Integer> ratesTable = new Hashtable<>();
+    private static Map<RatePair, Integer> ratesTable = new HashMap<>();
 
     public void addRate(String currencyOne, String currencyTwo, int rate) {
         RatePair pair = new RatePair(currencyOne, currencyTwo);

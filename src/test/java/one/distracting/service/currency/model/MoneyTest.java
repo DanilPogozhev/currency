@@ -6,28 +6,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MoneyTest {
+class MoneyTest {
 
     @Test
-    public void testMultiplication() {
+    void testMultiplication() {
         Money five = Money.dollar(5);
         assertEquals(Money.dollar(10), five.times(2));
         assertEquals(Money.dollar(15), five.times(3));
     }
 
     @Test
-    public void testCompareTwoDifferentCurrencies() {
+    void testCompareTwoDifferentCurrencies() {
         assertNotEquals(Money.dollar(5), Money.franc(5));
     }
 
     @Test
-    public void testCurrency() {
+    void testCurrency() {
         assertEquals("USD", Money.dollar(1).getCurrency());
         assertEquals("CHF", Money.franc(1).getCurrency());
     }
 
     @Test
-    public void testSimpleAddition() {
+    void testSimpleAddition() {
         Money five = Money.dollar(5);
         Expression sum = five.plus(five);
         Bank bank = new Bank();
@@ -36,7 +36,7 @@ public class MoneyTest {
     }
 
     @Test
-    public void testPlusReturnsSum() {
+    void testPlusReturnsSum() {
         Money five = Money.dollar(5);
         Expression expression = five.plus(five);
         Sum sum = (Sum) expression;
@@ -45,7 +45,7 @@ public class MoneyTest {
     }
 
     @Test
-    public void testMixedCurrenciesAddition() {
+    void testMixedCurrenciesAddition() {
         Expression franc = Money.franc(10);
         Expression dollar = Money.dollar(5);
         Expression sum = franc.plus(dollar);

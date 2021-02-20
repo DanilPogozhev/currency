@@ -42,8 +42,16 @@ public class Money implements Expression {
 
     @Override
     public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
         Money money = (Money) object;
         return amount == money.amount && getCurrency().equals(money.getCurrency());
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 
     @Override
