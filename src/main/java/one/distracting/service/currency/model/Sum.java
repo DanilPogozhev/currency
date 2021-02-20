@@ -26,6 +26,6 @@ public class Sum implements Expression {
 
     @Override
     public Expression plus(Expression money) {
-        return null;
+        return new Sum(this, addend);
     }
 }
