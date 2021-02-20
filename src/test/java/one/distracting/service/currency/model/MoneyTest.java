@@ -42,4 +42,15 @@ public class MoneyTest {
         assertEquals(five, sum.getAugend());
         assertEquals(five, sum.getAddend());
     }
+
+    @Test
+    public void testMixedCurrenciesAddition() {
+        Expression franc = Money.franc(10);
+        Expression dollar = Money.dollar(5);
+        Expression sum = franc.plus(dollar);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money reduce = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(10), reduce);
+    }
 }

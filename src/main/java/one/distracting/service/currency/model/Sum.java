@@ -2,24 +2,30 @@ package one.distracting.service.currency.model;
 
 public class Sum implements Expression {
 
-    private Money augend;
-    private Money addend;
+    private Expression augend;
+    private Expression addend;
 
-    public Sum(Money augend, Money addend) {
+    public Sum(Expression augend, Expression addend) {
         this.augend = augend;
         this.addend = addend;
     }
 
-    public Money getAugend() {
+    public Expression getAugend() {
         return augend;
     }
 
-    public Money getAddend() {
+    public Expression getAddend() {
         return addend;
     }
 
     public Money reduce(Bank bank, String to) {
-        int amount = getAugend().getAmount() + getAddend().getAmount();
+        int amount = bank.reduce(getAugend(), to).getAmount()
+                + bank.reduce(getAddend(), to).getAmount();
         return new Money(amount, to);
+    }
+
+    @Override
+    public Expression plus(Expression money) {
+        return null;
     }
 }
